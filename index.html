@@ -1,0 +1,310 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinevibes</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body class="body" style="display: flex;flex-direction: column;background-image: url('images/cinevibes.png');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;align-items: center;">
+    <div class="header" >
+        <div class="logo">
+            <img class="logoImage" src="images/CINEVIBES_Logo_Black.png" alt="logo"> </img>
+        </div>
+        <!-- <div class="headerText">
+            <h1 class="headerTextText">Cinevibes Digital</h1>
+        </div> -->
+        <div class="contact">
+            <span>Contact Us: </span>
+            <b>Email-id: keshavjadhav795@gmail.com</b>
+            <b>Mobile: +91-7066995546</b>
+        </div>
+    </div>
+    
+    <!-- scrolling Text -->
+    <marquee class="slidingText" width="100%" direction="right">
+      This is a sample scrolling text that has scrolls texts to right.
+      </marquee>
+    <!-- Main Slideshow container -->
+    <div class="mainSlideShowAndTextDiv">
+      <div class="mainSlideShowImages">
+        <img class="mainSlides" src="images/vivekanand.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/img1.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/img2.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/img3.jpg" alt="vivekananda">  
+      </div>
+      <div class="mainSlideShowButtons">
+        <button class="main-slide-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="main-slide-right" onclick="plusDivs(+1)">&#10095;</button>
+      </div>
+      <div class="mainImageText">
+          <h2> Vision </h2>
+          <p>
+            To be a university globally trusted for technical excellence where learning and research integrate to sustain society and industry.
+          </p>
+              
+          <h2>Mission</h2>
+          <p>
+            <li>
+              To create a converging learning environment to serve a dynamically evolving society.
+            </li>  
+            <li>
+              To promote innovation for sustainable solutions by forging global collaborations with academia and industry in cutting-edge research.
+            </li>
+            <li>
+              To be an intellectual ecosystem where human capabilities can develop holistically.
+            </li>              
+          </p>
+      </div>
+    </div>
+    
+    <!-- Work Slideshow Container -->
+  <div class="slideshow-container">
+    <div class="mySlides fade" style="display: flex; justify-content: center;">
+      <div class="numbertext" >1 / 3</div>
+      <img class="image" src="images/img1.jpg" onclick="getImageText(1)">
+    </div>  
+    <div class="mySlides fade" style="display: flex; justify-content: center;">
+      <div class="numbertext">2 / 3</div>
+      <img class="image" src="images/img2.jpg" onclick="getImageText(2)">
+    </div>  
+    <div class="mySlides fade" style="display: flex; justify-content: center;">
+      <div class="numbertext">3 / 3</div>
+      <img class="image" src="images/img3.jpg" onclick="getImageText(3)">
+    </div>
+     <!-- Next and previous buttons -->
+    <div class="prevArrow">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    </div>
+    <div class="nextArrow">
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>   
+  </div>
+  
+  <!--Javascript code to control the slideshow-->
+  <script>
+    let slideIndex = 1;
+    let mainSlideIndex = 1;
+    let displayWork = false;
+    carousel();
+    showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        function renderWork(){
+          displayWork = true;
+          showSlides(slideIndex);
+        }
+        function hideWork(){
+          displayWork = false;
+          showSlides(slideIndex);
+        }
+
+        //function to show main page slideshow
+        showDivs(mainSlideIndex);
+
+        // function to show the main page slideshow
+        function plusDivs(n) {
+          showDivs(mainSlideIndex += n);
+        }
+
+        // function to show the main page slideshow
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mainSlides");
+          if (n > x.length) {mainSlideIndex = 1}
+          if (n < 1) {mainSlideIndex = x.length} ;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[mainSlideIndex-1].style.display = "block";
+        }
+
+        //function to automate main slideshow
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mainSlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          mainSlideIndex++;
+          if (mainSlideIndex > x.length) {mainSlideIndex = 1}
+          x[mainSlideIndex-1].style.display = "block";
+          setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+
+        // function to display work slideshow
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            let dotClass = document.getElementsByClassName("dotsClass");
+            let prevArrow = document.getElementsByClassName("prevArrow");
+            let nextArrow = document.getElementsByClassName("nextArrow");
+            let mainImage = document.getElementsByClassName("mainSlideShowAndTextDiv");
+            let slideShowContainer = document.getElementsByClassName("slideshow-container");
+          if(displayWork === true){
+            for (i = 0; i < dotClass.length; i++) {
+              dotClass[i].style.display = "flex";
+              dotClass[i].style.justifyContent = "center"
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].style.display = "inline-block";
+              dots[i].style.alignSelf = "center"
+            }
+            for (i = 0; i < prevArrow.length; i++) {
+              prevArrow[i].style.display = "block";
+            }
+            for (i = 0; i < nextArrow.length; i++) {
+              nextArrow[i].style.display = "block";
+            }
+            for (i = 0; i < mainImage.length; i++) {
+              mainImage[i].style.display = "none";
+            }
+            for (i = 0; i < slideShowContainer.length; i++) {
+              slideShowContainer[i].style.display = "flex";
+            }
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "flex";
+            dots[slideIndex-1].className += " active";
+            getImageText(slideIndex);
+          }else{
+            // hiding all contents which should be rendered after client hits show work button
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dotClass.length; i++) {
+              dotClass[i].style.display = "none";
+            }
+            for (i = 0; i < prevArrow.length; i++) {
+              prevArrow[i].style.display = "none";
+            }
+            for (i = 0; i < nextArrow.length; i++) {
+              nextArrow[i].style.display = "none";
+            }
+            for (i = 0; i < slideShowContainer.length; i++) {
+              slideShowContainer[i].style.display = "none";
+            }
+            for (i = 0; i < mainImage.length; i++) {
+              mainImage[i].style.display = "flex";
+            }
+          }
+        }
+  </script>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div class="dotsClass">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <div class="indexPlusInfo" style="display: flex;padding-left: 2%;z-index: 1;padding-right: 2%;background-color: aliceblue;opacity: 0.8;justify-content: center;">
+        <div class="index">
+            <button class="button" onclick="getMainPage()">Introduction</button>
+            <button class="button" onclick="getIntro()">About Us</button>
+            <button class="button" onclick="getRaviIntro()">Ravi</button>
+            <button class="button" onclick="getVishnuIntro()">Vishnu</button>
+            <button class="button" onclick="getAbhiIntro()">Abhi</button>
+            <button class="button" onclick="renderWork()">Work</button>
+        </div>
+        <div class="info">
+            <script>
+                function getImageText(n){
+                  if(n===1){
+                    document.getElementById("intro").innerHTML = "This is a photo of 2 bad boys. Khup nalayak por ahet he. Yancha nalayakpana purn college madhe famous hota. He evadhe nalayak hote ki vishnu kiti pan bolla tari kadhich college madhun trip la nahi aale. Ani yancha nalayakpana aankhi pan chaluch ahe. Ashi hi nalayak por. Yanna latha ani bukkya maarun namaskar kela pahije."
+                  }else if(n===2){
+                    document.getElementById("intro").innerHTML = "This is a photo of Abhya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
+                  }else if(n===3){
+                    document.getElementById("intro").innerHTML = "This is a photo of Ravya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
+                  }                
+                }
+                function getIntro(){
+                  hideWork();
+                    document.getElementById("intro").innerHTML = `By 55,000 years ago, the first modern humans, or Homo sapiens, had arrived on the Indian subcontinent from Africa, where they had earlier evolved.[27][28][29] The earliest known modern human remains in South Asia date to about 30,000 years ago.[27] After 6500 BCE, evidence for domestication of food crops and animals, construction of permanent structures, and storage of agricultural surplus appeared in Mehrgarh and other sites in what is now Balochistan, Pakistan.[82] These gradually developed into the Indus Valley civilisation,[83][82] the first urban culture in South Asia,[84] which flourished during 2500–1900 BCE in what is now Pakistan and western India.[85] Centred around cities such as Mohenjo-daro, Harappa, Dholavira, and Kalibangan, and relying on varied forms of subsistence, the civilisation engaged robustly in crafts production and wide-ranging trade.[84]
+                          </br> During the period 2000–500 BCE, many regions of the subcontinent transitioned from the Chalcolithic cultures to the Iron Age ones.[86] The Vedas, the oldest scriptures associated with Hinduism,[87] were composed during this period,[88] and historians have analysed these to posit a Vedic culture in the Punjab region and the upper Gangetic Plain.[86] Most historians also consider this period to have encompassed several waves of Indo-Aryan migration into the subcontinent from the north-west.[87] The caste system, which created a hierarchy of priests, warriors, and free peasants, but which excluded indigenous peoples by labelling their occupations impure, arose during this period.[89] On the Deccan Plateau, archaeological evidence from this period suggests the existence of a chiefdom stage of political organisation.[86] In South India, a progression to sedentary life is indicated by the large number of megalithic monuments dating from this period,[90] as well as by nearby traces of agriculture, irrigation tanks, and craft traditions.[90]
+                          </br>We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!`;
+                }
+                function getRaviIntro(){
+                  hideWork();
+                    document.getElementById("intro").innerHTML = "This is Ravi's Page. Good luck to you!";
+                }
+                function getVishnuIntro(){
+                  hideWork();
+                    document.getElementById("intro").innerHTML = "This is Vishnu's Page. Good luck to you!";
+                }
+                function getAbhiIntro(){
+                  hideWork();
+                    document.getElementById("intro").innerHTML = `Early life (1863–1888)
+                            A Bengali woman, sitting
+                            Bhubaneswari Devi (1841–1911); "I am indebted to my mother for the efflorescence of my knowledge."[17] – Vivekananda<br />
+                            Vivekananda as a wandering monk
+                            3, Gourmohan Mukherjee Street, birthplace of Vivekananda, now converted into a museum and cultural centre<br />
+                            Vivekananda was born Narendranath Datta (shortened to Narendra or Naren)[18] in a Bengali family[19][20] at his ancestral home at 3 Gourmohan Mukherjee Street in Calcutta,[21] the capital of British India, on 12 January 1863 during the Makar Sankranti festival.[22] He belonged to a traditional family and was one of nine siblings.[23] His father, Vishwanath Datta, was an attorney at the Calcutta High Court.[19][24] Durgacharan Datta, Narendra's grandfather was a Sanskrit and Persian scholar[25] who left his family and became a monk at age twenty-five.[26] His mother, Bhubaneswari Devi, was a devout housewife.[25] The progressive, rational attitude of Narendra's father and the religious temperament of his mother helped shape his thinking and personality.[27][28] Narendranath was interested in spirituality from a young age and used to meditate before the images of deities such as Shiva, Rama, Sita, and Mahavir Hanuman.[29] He was fascinated by wandering ascetics and monks.[28] Narendra was naughty and restless as a child, and his parents often had difficulty controlling him. His mother said, "I prayed to Shiva for a son and he has sent me one of his demons".[26]<br />
+                            <br />
+                            Bartaman Bharat meaning "Present Day India"[222] is an erudite Bengali language essay written by him, which was first published in the March 1899 issue of Udbodhan, the only Bengali language magazine of Ramakrishna Math and Ramakrishna Mission. The essay was reprinted as a book in 1905 and later compiled into the fourth volume of The Complete Works of Swami Vivekananda.[223] [224]In this essay his refrain to the readers was to honour and treat every Indian as a brother irrespective of whether he was born poor or in lower caste.[225]`;
+                }
+                function getMainPage(){
+                  hideWork();
+                    document.getElementById("intro").innerHTML = `Cave 26 of the rock-cut Ajanta Caves
+                              In the late Vedic period, around the 6th century BCE, the small states and chiefdoms of the Ganges Plain and the north-western regions had consolidated into 16 major oligarchies and monarchies that were known as the mahajanapadas.[91][92] The emerging urbanisation gave rise to non-Vedic religious movements, two of which became independent religions. Jainism came into prominence during the life of its exemplar, Mahavira.[93] Buddhism, based on the teachings of Gautama Buddha, attracted followers from all social classes excepting the middle class; chronicling the life of the Buddha was central to the beginnings of recorded history in India.[94][95][96] In an age of increasing urban wealth, both religions held up renunciation as an ideal,[97] and both established long-lasting monastic traditions. Politically, by the 3rd century BCE, the kingdom of Magadha had annexed or reduced other states to emerge as the Mauryan Empire.[98] The empire was once thought to have controlled most of the subcontinent except the far south, but its core regions are now thought to have been separated by large autonomous areas.[99][100] The Mauryan kings are known as much for their empire-building and determined management of public life as for Ashoka's renunciation of militarism and far-flung advocacy of the Buddhist dhamma.[101][102]</br>
+                              The Sangam literature of the Tamil language reveals that, between 200 BCE and 200 CE, the southern peninsula was ruled by the Cheras, the Cholas, and the Pandyas, dynasties that traded extensively with the Roman Empire and with West and South-East Asia.[103][104] In North India, Hinduism asserted patriarchal control within the family, leading to increased subordination of women.[105][98] By the 4th and 5th centuries, the Gupta Empire had created a complex system of administration and taxation in the greater Ganges Plain; this system became a model for later Indian kingdoms.[106][107] Under the Guptas, a renewed Hinduism based on devotion, rather than the management of ritual, began to assert itself.[108] This renewal was reflected in a flowering of sculpture and architecture, which found patrons among an urban elite.[107] Classical Sanskrit literature flowered as well, and Indian science, astronomy, medicine, and mathematics made significant advances.[107]
+                              </br>`;
+                }
+            </script>
+            <div style="display: flex; flex-direction: column;">
+                <p id="intro">
+                  By 55,000 years ago, the first modern humans, or Homo sapiens, had arrived on the Indian subcontinent from Africa, where they had earlier evolved.[27][28][29] The earliest known modern human remains in South Asia date to about 30,000 years ago.[27] After 6500 BCE, evidence for domestication of food crops and animals, construction of permanent structures, and storage of agricultural surplus appeared in Mehrgarh and other sites in what is now Balochistan, Pakistan.[82] These gradually developed into the Indus Valley civilisation,[83][82] the first urban culture in South Asia,[84] which flourished during 2500–1900 BCE in what is now Pakistan and western India.[85] Centred around cities such as Mohenjo-daro, Harappa, Dholavira, and Kalibangan, and relying on varied forms of subsistence, the civilisation engaged robustly in crafts production and wide-ranging trade.[84]<br />
+                  <br />
+                  During the period 2000–500 BCE, many regions of the subcontinent transitioned from the Chalcolithic cultures to the Iron Age ones.[86] The Vedas, the oldest scriptures associated with Hinduism,[87] were composed during this period,[88] and historians have analysed these to posit a Vedic culture in the Punjab region and the upper Gangetic Plain.[86] Most historians also consider this period to have encompassed several waves of Indo-Aryan migration into the subcontinent from the north-west.[87] The caste system, which created a hierarchy of priests, warriors, and free peasants, but which excluded indigenous peoples by labelling their occupations impure, arose during this period.[89] On the Deccan Plateau, archaeological evidence from this period suggests the existence of a chiefdom stage of political organisation.[86] In South India, a progression to sedentary life is indicated by the large number of megalithic monuments dating from this period,[90] as well as by nearby traces of agriculture, irrigation tanks, and craft traditions.[90]<br />
+                  <br />
+                  <br />
+                  Cave 26 of the rock-cut Ajanta Caves<br />
+                  In the late Vedic period, around the 6th century BCE, the small states and chiefdoms of the Ganges Plain and the north-western regions had consolidated into 16 major oligarchies and monarchies that were known as the mahajanapadas.[91][92] The emerging urbanisation gave rise to non-Vedic religious movements, two of which became independent religions. Jainism came into prominence during the life of its exemplar, Mahavira.[93] Buddhism, based on the teachings of Gautama Buddha, attracted followers from all social classes excepting the middle class; chronicling the life of the Buddha was central to the beginnings of recorded history in India.[94][95][96] In an age of increasing urban wealth, both religions held up renunciation as an ideal,[97] and both established long-lasting monastic traditions. Politically, by the 3rd century BCE, the kingdom of Magadha had annexed or reduced other states to emerge as the Mauryan Empire.[98] The empire was once thought to have controlled most of the subcontinent except the far south, but its core regions are now thought to have been separated by large autonomous areas.[99][100] The Mauryan kings are known as much for their empire-building and determined management of public life as for Ashoka's renunciation of militarism and far-flung advocacy of the Buddhist dhamma.[101][102]<br />
+                  <br />
+                  The Sangam literature of the Tamil language reveals that, between 200 BCE and 200 CE, the southern peninsula was ruled by the Cheras, the Cholas, and the Pandyas, dynasties that traded extensively with the Roman Empire and with West and South-East Asia.[103][104] In North India, Hinduism asserted patriarchal control within the family, leading to increased subordination of women.[105][98] By the 4th and 5th centuries, the Gupta Empire had created a complex system of administration and taxation in the greater Ganges Plain; this system became a model for later Indian kingdoms.[106][107] Under the Guptas, a renewed Hinduism based on devotion, rather than the management of ritual, began to assert itself.[108] This renewal was reflected in a flowering of sculpture and architecture, which found patrons among an urban elite.[107] Classical Sanskrit literature flowered as well, and Indian science, astronomy, medicine, and mathematics made significant advances.[107]<br />
+                  <br />
+                  Medieval India<br />
+                  <br />
+                  Brihadeshwara temple, Thanjavur, completed in 1010 CE<br />
+                  <br />
+                  The Qutub Minar, 73 m (240 ft) tall, completed by the Sultan of Delhi, Iltutmish<br />
+                  The Indian early medieval age, from 600 to 1200 CE, is defined by regional kingdoms and cultural diversity.[109] When Harsha of Kannauj, who ruled much of the Indo-Gangetic Plain from 606 to 647 CE, attempted to expand southwards, he was defeated by the Chalukya ruler of the Deccan.[110] When his successor attempted to expand eastwards, he was defeated by the Pala king of Bengal.[110] When the Chalukyas attempted to expand southwards, they were defeated by the Pallavas from farther south, who in turn were opposed by the Pandyas and the Cholas from still farther south.[110] No ruler of this period was able to create an empire and consistently control lands much beyond their core region.[109] During this time, pastoral peoples, whose land had been cleared to make way for the growing agricultural economy, were accommodated within caste society, as were new non-traditional ruling classes.[111] The caste system consequently began to show regional differences.[111]<br />
+                  <br />
+                  In the 6th and 7th centuries, the first devotional hymns were created in the Tamil language.[112] They were imitated all over India and led to both the resurgence of Hinduism and the development of all modern languages of the subcontinent.[112] Indian royalty, big and small, and the temples they patronised drew citizens in great numbers to the capital cities, which became economic hubs as well.[113] Temple towns of various sizes began to appear everywhere as India underwent another urbanisation.[113] By the 8th and 9th centuries, the effects were felt in South-East Asia, as South Indian culture and political systems were exported to lands that became part of modern-day Myanmar, Thailand, Laos, Brunei, Cambodia, Vietnam, Philippines, Malaysia, and Indonesia.[114] Indian merchants, scholars, and sometimes armies were involved in this transmission; South-East Asians took the initiative as well, with many sojourning in Indian seminaries and translating Buddhist and Hindu texts into their languages.[114]<br />
+                  <br />
+                  After the 10th century, Muslim Central Asian nomadic clans, using swift-horse cavalry and raising vast armies united by ethnicity and religion, repeatedly overran South Asia's north-western plains, leading eventually to the establishment of the Islamic Delhi Sultanate in 1206.[115] The sultanate was to control much of North India and to make many forays into South India. Although at first disruptive for the Indian elites, the sultanate largely left its vast non-Muslim subject population to its own laws and customs.[116][117] By repeatedly repulsing Mongol raiders in the 13th century, the sultanate saved India from the devastation visited on West and Central Asia, setting the scene for centuries of migration of fleeing soldiers, learned men, mystics, traders, artists, and artisans from that region into the subcontinent, thereby creating a syncretic Indo-Islamic culture in the north.[118][119] The sultanate's raiding and weakening of the regional kingdoms of South India paved the way for the indigenous Vijayanagara Empire.[120] Embracing a strong Shaivite tradition and building upon the military technology of the sultanate, the empire came to control much of peninsular India,[121] and was to influence South Indian society for long afterwards.[120]<br />
+                  <br />
+                  Early modern India<br />
+                  In the early 16th century, northern India, then under mainly Muslim rulers,[122] fell again to the superior mobility and firepower of a new generation of Central Asian warriors.[123] The resulting Mughal Empire did not stamp out the local societies it came to rule. Instead, it balanced and pacified them through new administrative practices[124][125] and diverse and inclusive ruling elites,[126] leading to more systematic, centralised, and uniform rule.[127] Eschewing tribal bonds and Islamic identity, especially under Akbar, the Mughals united their far-flung realms through loyalty, expressed through a Persianised culture, to an emperor who had near-divine status.[126] The Mughal state's economic policies, deriving most revenues from agriculture[128] and mandating that taxes be paid in the well-regulated silver currency,[129] caused peasants and artisans to enter larger markets.[127] The relative peace maintained by the empire during much of the 17th century was a factor in India's economic expansion,[127] resulting in greater patronage of painting, literary forms, textiles, and architecture.[130] Newly coherent social groups in northern and western India, such as the Marathas, the Rajputs, and the Sikhs, gained military and governing ambitions during Mughal rule, which, through collaboration or adversity, gave them both recognition and military experience.[131] Expanding commerce during Mughal rule gave rise to new Indian commercial and political elites along the coasts of southern and eastern India.[131] As the empire disintegrated, many among these elites were able to seek and control their own affairs.[132]<br />
+                  <br />
+                </p>
+            </div>        
+        </div>
+    </div>
+    <!-- <div class="footer">
+        <div style="width: 100%;display: flex;padding-left: 13px;">
+            <span style="color: black;padding-left: 5px;">Cinevibes Digital</span>
+        </div>
+        <div class="footerAddress">
+            <span style="color: Red;">Alt Mob: 8180927857</span>
+        </div>
+    </div> -->
+</body>
+</html>
+
