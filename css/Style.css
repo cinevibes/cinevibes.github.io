@@ -139,6 +139,12 @@ html {
   right: 0;
   z-index: 1;
 }
+.barcodeDiv {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  justify-content: center;
+}
 
 /* .footer {
   width: 100%;
@@ -155,7 +161,8 @@ html {
   right: 0;
   align-items: center;
 } */
-.button,.branchesButton {
+.button,
+.branchesButton {
   background-color: rgb(43, 201, 64); /* Green */
   border: none;
   color: rgb(10, 10, 10);
@@ -166,7 +173,8 @@ html {
   font-size: 12px;
   z-index: 2;
 }
-button:hover, branchesButton:hover {
+button:hover,
+branchesButton:hover {
   background-color: white;
   color: darkblue;
 }
@@ -279,7 +287,7 @@ LinkButton:hover {
   .headerText {
     font-size: 20px;
   }
-  .mainSlideShowAndTextDiv{
+  .mainSlideShowAndTextDiv {
     width: 96%;
   }
 }
@@ -297,11 +305,11 @@ LinkButton:hover {
     padding: 2px 2px;
     font-size: 7px;
   }
-  .branchesButton{
+  .branchesButton {
     font-size: 11px;
   }
   .LinkButton {
-    padding: 2px 2px;
+    padding: 9px 2px;
     font-size: 9px;
   }
   /* .footer {
@@ -310,19 +318,19 @@ LinkButton:hover {
     height: 5px;
     justify-content: space-between;
   } */
-  .barcode {
-    height: 35px;
-    width: 35px;
+  .barcodeDiv {
+    display: none;
   }
   .logo {
     display: flex;
     align-self: center;
-    width: 126px;
-    height: 100px;
+    width: 150px;
+    height: 123px;
+    padding-left: 48px;
   }
   .logoImage {
-    width: 147px;
-    height: 40px;
+    width: 190px;
+    height: 50px;
     padding-left: 5px;
   }
   .headerTextText {
@@ -335,7 +343,7 @@ LinkButton:hover {
     text-align: left;
     align-self: center;
     color: black;
-    font-size: 5px;
+    font-size: 11px;
     align-items: center;
     /* width: 184px; */
   }
@@ -404,6 +412,29 @@ LinkButton:hover {
   }
 }
 
+@media screen and (max-width: 330px) {
+  .header{
+    background-image: url('/images/white-background.png');
+    background-color: white;
+  }
+  .logo {
+    display: flex;
+    align-self: center;
+    width: 128px;
+    height: 30px;
+    padding-left: 0px;
+  }
+  .logoImage {
+    width: 131px;
+    height: 37px;
+    background-color: white;
+    border-radius: 100%;
+  }
+  .barcodeDiv{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 888px) and (min-width: 677px) {
   .body {
     font-size: 12px;
@@ -412,7 +443,8 @@ LinkButton:hover {
     display: flex;
     height: 80px;
   }
-  .button, .branchesButton {
+  .button,
+  .branchesButton {
     padding: 3px 10px;
     font-size: 10px;
   }
@@ -465,7 +497,7 @@ LinkButton:hover {
   .slideshow-container {
     padding-top: 10px;
   }
-  .gMapLogo{
+  .gMapLogo {
     padding-left: 0px;
   }
 }
