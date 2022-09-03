@@ -1,14 +1,14 @@
 html {
   scroll-behavior: smooth;
 }
-.slidingText{
+.slidingText {
   padding-top: 130px;
 }
 .mainSlideShowAndTextDiv {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
-  width: 85%;
+  width: 90%;
 }
 .mainSlideShowImages {
   width: 50%;
@@ -25,7 +25,8 @@ html {
 }
 .mainImageText {
   width: 45%;
-  background-color: rgb(149, 200, 212);
+  background-color: rgb(220, 232, 243);
+  opacity: 0.8;
   padding-left: 2%;
 }
 /* Slideshow container */
@@ -132,7 +133,7 @@ html {
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   top: 0;
   right: 0;
@@ -154,7 +155,7 @@ html {
   right: 0;
   align-items: center;
 } */
-.button {
+.button,.branchesButton {
   background-color: rgb(43, 201, 64); /* Green */
   border: none;
   color: rgb(10, 10, 10);
@@ -165,11 +166,26 @@ html {
   font-size: 12px;
   z-index: 2;
 }
-button:hover {
+button:hover, branchesButton:hover {
   background-color: white;
   color: darkblue;
 }
-
+.LinkButton {
+  background-color: Transparent;
+  border: none;
+  color: rgb(10, 10, 10);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  z-index: 2;
+}
+LinkButton:hover {
+  background-color: white;
+  color: darkblue;
+  cursor: pointer;
+}
 /* .footerAddress {
   color: black;
   width: 100%;
@@ -181,7 +197,11 @@ button:hover {
 .logo {
   display: flex;
   justify-content: flex-start;
-  padding-left: 18%;
+}
+.barcode {
+  height: 80px;
+  width: 80px;
+  align-self: center;
 }
 .headerText {
   display: flex;
@@ -200,20 +220,34 @@ button:hover {
 }
 .logoImage {
   align-self: center;
-  height: 300px;
+  height: 100px;
   width: 600px;
   padding-left: 18%;
 }
 .contact {
   padding-right: 1%;
-  font-size: 13px;
+  font-size: 17px;
   display: flex;
   flex-direction: column;
   /* width: 250px; */
   text-align: left;
   align-self: center;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding-right: 3%;
+  background-color: rgb(199, 211, 211);
+  padding: 2px 16px;
+  border-radius: 48%;
+  text-align: center;
+}
+.contactLogo {
+  height: 13px;
+  width: 20px;
+}
+.gMapLogo {
+  height: 25px;
+  width: 25px;
+  padding-top: 1px;
+  padding-left: 13px;
 }
 .index {
   width: 100%;
@@ -234,6 +268,9 @@ button:hover {
   font-size: large;
   display: flex;
   justify-content: center;
+  background-color: aliceblue;
+  opacity: 0.8;
+  padding: 5px;
   /* position:relative;
   top: -7%; */
 }
@@ -241,6 +278,9 @@ button:hover {
 @media screen and (max-width: 1024px) {
   .headerText {
     font-size: 20px;
+  }
+  .mainSlideShowAndTextDiv{
+    width: 96%;
   }
 }
 
@@ -255,6 +295,13 @@ button:hover {
   }
   .button {
     padding: 2px 2px;
+    font-size: 7px;
+  }
+  .branchesButton{
+    font-size: 11px;
+  }
+  .LinkButton {
+    padding: 2px 2px;
     font-size: 9px;
   }
   /* .footer {
@@ -263,15 +310,19 @@ button:hover {
     height: 5px;
     justify-content: space-between;
   } */
+  .barcode {
+    height: 35px;
+    width: 35px;
+  }
   .logo {
     display: flex;
     align-self: center;
-    width: 25px;
-    height: 25px;
+    width: 126px;
+    height: 100px;
   }
   .logoImage {
-    width: 30px;
-    height: 30px;
+    width: 147px;
+    height: 40px;
     padding-left: 5px;
   }
   .headerTextText {
@@ -285,7 +336,12 @@ button:hover {
     align-self: center;
     color: black;
     font-size: 5px;
+    align-items: center;
     /* width: 184px; */
+  }
+  .contactLogo {
+    height: 5px;
+    width: 10px;
   }
   .indexLink {
     margin: 0px;
@@ -317,31 +373,34 @@ button:hover {
     top: 23px;
     font-size: 7px;
   }
-  .mainSlideShowAndTextDiv{
+  .mainSlideShowAndTextDiv {
     padding-top: 10px;
     flex-direction: column;
+    width: 99%;
   }
-  .mainSlideShowImages{
-    width: 90%;
+  .mainSlideShowImages {
+    width: 100%;
     position: relative;
     height: 220px;
   }
-  .mainSlides{
+  .mainSlides {
     height: 200px;
   }
-  .mainImageText{
-    width: 90%;
+  .mainImageText {
+    width: 100%;
     font-size: 13px;
   }
-  .slideshow-container{
+  .slideshow-container {
     padding-top: 5px;
   }
-  .slidingText{
+  .slidingText {
     padding-top: 60px;
     font-size: 13px;
   }
-  .info{
+  .info {
     font-size: 13px;
+    padding: 5px;
+    width: 99%;
   }
 }
 
@@ -353,7 +412,11 @@ button:hover {
     display: flex;
     height: 80px;
   }
-  .button {
+  .button, .branchesButton {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+  .LinkButton {
     padding: 3px 10px;
     font-size: 10px;
   }
@@ -363,12 +426,16 @@ button:hover {
   .logo {
     display: flex;
     align-self: center;
-    width: 30px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
   }
   .logoImage {
-    width: 30px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
+  }
+  .barcode {
+    width: 84px;
+    height: 63px;
   }
   .headerText {
     font-size: 20px;
@@ -385,17 +452,21 @@ button:hover {
     text-align: left;
     align-self: center;
     color: black;
-    font-size: 13px;
+    font-size: 12px;
+    align-items: center;
   }
-  .slidingText{
+  .slidingText {
     padding-top: 100px;
   }
-  .mainSlideShowAndTextDiv{
+  .mainSlideShowAndTextDiv {
     padding-top: 20px;
+    width: 90%;
   }
-  .slideshow-container{
+  .slideshow-container {
     padding-top: 10px;
   }
+  .gMapLogo{
+    padding-left: 0px;
+  }
 }
-
 

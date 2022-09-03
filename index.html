@@ -7,17 +7,29 @@
     <link rel="stylesheet" href="css/Style.css">
 </head>
 <body class="body" style="display: flex;flex-direction: column;background-image: url('images/cinevibes.png');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;align-items: center;">
-    <div class="header" >
-        <div class="logo">
+    <div class="header" style="background-image: url('images/flower_blur_vector_266388.jpg');">
+      <div style="display: flex; flex-direction: column; color: black;justify-content: center;">
+        <b>Whatsapp barcode</b>
+        <img class="barcode" src="images/Whatsapp barcoad.jpg" alt="barcode">
+      </div>  
+      
+      <div class="logo">
             <img class="logoImage" src="images/CINEVIBES_Logo_Black.png" alt="logo"> </img>
         </div>
         <!-- <div class="headerText">
             <h1 class="headerTextText">Cinevibes Digital</h1>
         </div> -->
         <div class="contact">
-            <span>Contact Us: </span>
-            <b>Email-id: keshavjadhav795@gmail.com</b>
-            <b>Mobile: +91-7066995546</b>
+            <span >Contact Us </span>
+            <div>
+              <img src="images/Gmail-740x416.png" class="contactLogo"/>
+              <b>keshavjadhav795@gmail.com</b>
+            </div>
+            <div>
+              <img src="images/phone_logo.png" class="contactLogo"/>
+              <b>+91-7066995546</b>
+            </div>
+            
         </div>
     </div>
     
@@ -42,21 +54,36 @@
             <b style="font-size: larger;color: rgb(0, 44, 10);text-shadow: aqua;">WE CAPTURE THE MOMENTS</b> <br />
              - Certified professional photographer
           </p>
-              
-          <h2>View Us At</h2>
-          <p>
-            <div>
-              <img src="images/Google_Maps_icon_(2015-2020).svg.png" style="height: 20px;width: 20px;padding-left: 5px;"/>
-              <a href="https://goo.gl/maps/AKWMrXzaBwCYu8XQ6" style="padding-left: 10px;">Cinevibes Google Map Location</a>
+          
+          <div>
+            <b style="font-size: larger;color: rgb(0, 44, 10);text-shadow: aqua;">View Us At</b>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;align-items: center;">
+              <div style="display: flex; flex-direction: row;align-items: center;">
+                <img src="images/Google_Maps_icon_(2015-2020).svg.png" class="gMapLogo"/>
+                <a href="https://goo.gl/maps/AKWMrXzaBwCYu8XQ6" style="padding-left: 10px;"><button class="LinkButton"><b>Google Map Location</b></button></a>
+              </div>  
+              <div style="display: flex; flex-direction: row;align-items: center;">
+                <img src="images/whatsapp_logo.png" style="height: 35px;width: 35px;"/>
+                <a href="https://wa.me/message/ZRSSVFI6N6W5M1" style="padding-left: 10px;padding-top: 5px;"><button class="LinkButton"><b>Cinevibes Whatsapp link</b></button></a>
+              </div>  
+          </div>
+          <div style="display: flex; flex-direction: row; justify-content: space-around;">
+            <div style="display: flex; flex-direction: row;align-items: center;"">
+              <img src="images/256px-Instagram_icon.png" style="height: 25px;width: 25px;padding-top: 1px;"/>
+              <a href="https://instagram.com/cinevibes.latur?igshid=YmMyMTA2M2Y=" style="padding-left: 10px;"><button class="LinkButton"><b>Instagram Link</b></button></a>
             </div>  
-            <div style="display: flex; flex-direction: row;">
-              <img src="images/whatsapp_logo.png" style="height: 30px;width: 30px;"/>
-              <a href="https://wa.me/message/ZRSSVFI6N6W5M1" style="padding-left: 10px;padding-top: 5px;">Cinevibes Whatsapp link</a>
+            <div style="display: flex; flex-direction: row;align-items: center;">
+              <img src="images/youtube_logo.png" style="height: 25px;width: 25px;padding-left: 18px;"/>
+              <a href="https://www.youtube.com/channel/UCNGmOFja8siuuNqD3N-M1Fw" style="padding-left: 10px;padding-top: 5px;"><button class="LinkButton"><b>Cinevibes YouTube link</b></button></a>
             </div>  
-            <li>
-              To be an intellectual ecosystem where human capabilities can develop holistically.
-            </li>              
-          </p>
+        </div>
+            <h2>
+              We have our branches located at:
+            </h2>              
+            <button class="branchesButton"><b>LATUR</b></button>
+            <button class="branchesButton"><b>JUNNAR</b></button>
+            <button class="branchesButton"><b>NANDED</b></button>
+          </div>
       </div>
     </div>
     
@@ -216,7 +243,7 @@
     <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
-  <div class="indexPlusInfo" style="display: flex;padding-left: 2%;z-index: 1;padding-right: 2%;background-color: aliceblue;opacity: 0.8;justify-content: center;">
+  <!-- <div class="indexPlusInfo" style="display: flex;padding-left: 2%;z-index: 1;padding-right: 2%;background-color: aliceblue;opacity: 0.8;justify-content: center;"> -->
         <div class="index">
             <button class="button" onclick="getMainPage()">Introduction</button>
             <button class="button" onclick="getIntro()">Wedding</button>
@@ -299,7 +326,7 @@
                 </p>
             </div>        
         </div>
-    </div>
+    <!-- </div> -->
     <!-- <div class="footer">
         <div style="width: 100%;display: flex;padding-left: 13px;">
             <span style="color: black;padding-left: 5px;">Cinevibes Digital</span>
