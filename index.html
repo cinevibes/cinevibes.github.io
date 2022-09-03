@@ -28,7 +28,7 @@
     <!-- Main Slideshow container -->
     <div class="mainSlideShowAndTextDiv">
       <div class="mainSlideShowImages">
-        <img class="mainSlides" src="images/vivekanand.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/capture_image.jpg" alt="vivekananda" style="opacity: 0.8;">
         <img class="mainSlides" src="images/img1.jpg" alt="vivekananda">
         <img class="mainSlides" src="images/img2.jpg" alt="vivekananda">
         <img class="mainSlides" src="images/img3.jpg" alt="vivekananda">  
@@ -38,19 +38,21 @@
         <button class="main-slide-right" onclick="plusDivs(+1)">&#10095;</button>
       </div>
       <div class="mainImageText">
-          <h2> Vision </h2>
           <p>
-            To be a university globally trusted for technical excellence where learning and research integrate to sustain society and industry.
+            <b style="font-size: larger;color: rgb(0, 44, 10);text-shadow: aqua;">WE CAPTURE THE MOMENTS</b> <br />
+             - Certified professional photographer
           </p>
               
-          <h2>Mission</h2>
+          <h2>View Us At</h2>
           <p>
-            <li>
-              To create a converging learning environment to serve a dynamically evolving society.
-            </li>  
-            <li>
-              To promote innovation for sustainable solutions by forging global collaborations with academia and industry in cutting-edge research.
-            </li>
+            <div>
+              <img src="images/Google_Maps_icon_(2015-2020).svg.png" style="height: 20px;width: 20px;padding-left: 5px;"/>
+              <a href="https://goo.gl/maps/AKWMrXzaBwCYu8XQ6" style="padding-left: 10px;">Cinevibes Google Map Location</a>
+            </div>  
+            <div style="display: flex; flex-direction: row;">
+              <img src="images/whatsapp_logo.png" style="height: 30px;width: 30px;"/>
+              <a href="https://wa.me/message/ZRSSVFI6N6W5M1" style="padding-left: 10px;padding-top: 5px;">Cinevibes Whatsapp link</a>
+            </div>  
             <li>
               To be an intellectual ecosystem where human capabilities can develop holistically.
             </li>              
@@ -86,7 +88,7 @@
     let slideIndex = 1;
     let mainSlideIndex = 1;
     let displayWork = false;
-    carousel();
+    // carousel();
     showSlides(slideIndex);
 
         // Next/previous controls
@@ -217,11 +219,12 @@
   <div class="indexPlusInfo" style="display: flex;padding-left: 2%;z-index: 1;padding-right: 2%;background-color: aliceblue;opacity: 0.8;justify-content: center;">
         <div class="index">
             <button class="button" onclick="getMainPage()">Introduction</button>
-            <button class="button" onclick="getIntro()">About Us</button>
-            <button class="button" onclick="getRaviIntro()">Ravi</button>
-            <button class="button" onclick="getVishnuIntro()">Vishnu</button>
-            <button class="button" onclick="getAbhiIntro()">Abhi</button>
-            <button class="button" onclick="renderWork()">Work</button>
+            <button class="button" onclick="getIntro()">Wedding</button>
+            <button class="button" onclick="getRaviIntro()">Pre-Wedding</button>
+            <button class="button" onclick="getVishnuIntro()">Baby Shoot</button>
+            <button class="button" onclick="getAbhiIntro()">Maternity Shoot</button>
+            <button class="button" onclick="renderWork()">Product Photography</button>
+            <button class="button" onclick="renderWork()">Events Photography</button>
         </div>
         <div class="info">
             <script>
